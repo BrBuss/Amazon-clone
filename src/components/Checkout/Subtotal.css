@@ -1,0 +1,95 @@
+.subtotal {
+  margin-top: -1px;
+  border-radius: 0 0 4px 4px;
+  background-color: #f3f3f3 !important;
+  border: 1px #ddd solid;
+  height: 120px;
+  display: block;
+  box-sizing: border-box;
+  width: 300px;
+}
+.subtotal__inner {
+  padding: 14px 18px;
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+}
+
+.subtotal__title {
+  margin-bottom: 4px;
+  width: 100%;
+}
+.subtotal__title span {
+  font-size: 17px !important;
+  line-height: 1.255 !important;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+.subtotal__value {
+  font-size: 17px !important;
+  line-height: 1.255 !important;
+  color: #0f1111 !important;
+  text-rendering: optimizeLegibility;
+  font-weight: 700 !important;
+}
+.subtotal__gift {
+  margin-bottom: 12px;
+}
+.subtotal__label {
+  font-weight: 400;
+  color: #111;
+  padding-left: 15px;
+  text-indent: -15px;
+  margin-left: 3px;
+  top: -2px;
+  padding-bottom: 0;
+  font-size: 13px;
+  line-height: 19px;
+}
+.subtotal__label input {
+  height: 13px;
+  width: 13px;
+  position: relative;
+  bottom: -3px;
+  transition: all 0.1s linear;
+  line-height: 19px;
+  color: #111;
+}
+
+.subtotal__label span {
+  position: relative;
+  padding-left: 5px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: 400;
+  color: #111;
+}
+.subtotal__buttonContainer {
+  width: 100%;
+  max-width: 260px;
+}
+.subtotal__button {
+  background: #ffd814;
+  border-color: #fcd200;
+  width: 100%;
+  height: 29px;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+  border-radius: 2px;
+  padding: 0 10px 0 11px;
+
+  border-radius: 8px;
+
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-align: center;
+
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.subtotal__button:hover {
+  background: #f7ca00;
+  border-color: #f2c200;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+}

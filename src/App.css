@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.app__footer {
+  display: flex;
+  padding: 6px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  bottom: 0;
+}
