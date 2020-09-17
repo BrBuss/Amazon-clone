@@ -1,0 +1,46 @@
+          <Product
+            id="123764"
+            title="some title"
+            description="just a random description for test proposes"
+            price={11.5}
+            rating={5}
+            img="https://images-na.ssl-images-amazon.com/images/I/510YXBcI6cL._AC_.jpg"
+          />
+        </div>
+
+        <div className="home__productRow">
+          <Product
+            id="123456"
+            title="some title"
+            description="just a random description for test proposes"
+            price={11.5}
+            rating={5}
+            img="https://images-na.ssl-images-amazon.com/images/I/511TKNyCY8L._AC_SL1000_.jpg"
+          />
+          <Product
+            id="12"
+            title="some title"
+            description="just a random description for test proposes"
+            price={11.5}
+            rating={5}
+            img="https://images-na.ssl-images-amazon.com/images/I/914k1vtZtcL._AC_SL1500_.jpg"
+          />
+          <Product
+            id="123"
+            title="some title"
+            description="just a random description for test proposes"
+            price={11.5}
+            rating={5}
+            img="https://m.media-amazon.com/images/I/51QP74kWmUL._AA210_.jpg"
+          />
+        </div>
+        <div className="home__productRow">
+          <Product
+            id="12345"
+            title="some title"
+            description="just a random description for test proposes"
+            price={11.5}
+            rating={5}
+            img="https://images-na.ssl-images-amazon.com/images/I/61Fwi6zN78L._AC_SL1000_.jpg"
+          />
+        </div>

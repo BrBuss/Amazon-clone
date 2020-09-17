@@ -1,8 +1,31 @@
 * {
   margin: 0;
+
   font-family: "Amazon Ember", Arial, sans-serif;
 }
 
+.title-block {
+  display: block;
+  width: auto;
+  float: left;
+  font-size: 21px;
+  line-height: 1.5 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  padding-bottom: 0;
+}
+
+.links {
+  text-decoration: none !important;
+  color: #0066c0 !important;
+  cursor: pointer !important;
+}
+.links:hover {
+  text-decoration: underline !important;
+  cursor: pointer !important;
+  color: #c45500 !important;
+}
 .app__footer {
   display: flex;
   padding: 6px;
