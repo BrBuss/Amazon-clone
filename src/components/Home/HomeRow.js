@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./HomeRow.css";
 import { Link } from "react-router-dom";
 
-function HomeRow() {
+function HomeRow({ rowItem }) {
+  const ref = useRef(null);
+
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
+
   return (
     <div className="homerow">
       <div className="homerow__title">
@@ -13,83 +19,37 @@ function HomeRow() {
           <Link className="links">Click to learn more</Link>
         </span>
       </div>
-      <div className="homerow__carousel">
-        <div className="homerow__carouselView">
-          <ul className="homerow__carouselList">
-            <li aria-posinset="1" className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
-
-            <li aria-posinset="2" className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
-
-            <li aria-posinset="3" className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
-
-            <li aria-posinset="4" className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
-
-            <li className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
-            <li className="homerow__carouselCard">
-              <span className="homerow__carouselItem">
-                <Link to="/">
-                  <img
-                    src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Projects/HelpPage/BubbleShoveler/English/Fuji_Bubble_8Languages_en_US_updated_1x._CB445837675_.png"
-                    alt=""
-                  />
-                </Link>
-              </span>
-            </li>
+      <div className="homerow__view">
+        <div className="homerow__innerView" ref={ref}>
+          <ul className="homerow__list">
+            {/*"?" is to prevent undefined error, this allow to render jsx only props are available */}
+            {rowItem?.map((img, index) => (
+              <li key={index} className="homerow__rowCard">
+                <span className="homerow__item">
+                  <Link to="/">
+                    <img src={img} alt="" />
+                  </Link>
+                </span>
+              </li>
+            ))}
           </ul>
-          <div className="spinner">
-            <i className="gw-spinner" role="presentation"></i>
-          </div>
-          <a tabindex="-1" className="carousel-left">
+        </div>
+        <div onClick={() => scroll(-1150)} className="homerow__scrollLeft">
+          <img
+            src="https://image.flaticon.com/icons/png/512/54/54321.png"
+            alt=""
+          />
+        </div>
+        <div onClick={() => scroll(1150)} className="homerow__scrollRight">
+          <img
+            src="https://image.flaticon.com/icons/png/512/54/54321.png"
+            alt=""
+          />
+        </div>
+        <div className="homerow__scrollbar">
+          <span>
             <span></span>
-          </a>
-          <a tabindex="-1" className="carousel-right">
-            <span></span>
-          </a>
+          </span>
         </div>
       </div>
     </div>

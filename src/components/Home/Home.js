@@ -1,11 +1,16 @@
 import React from "react";
 import "./Home.css";
-import Product from "./Product";
+
 import HomeCard from "./HomeCard";
 import { Link } from "react-router-dom";
 import HomeRow from "./HomeRow";
+import { imgUrl } from "./imgUrls";
 
 function Home() {
+  const row1 = imgUrl.row1;
+  const row2 = imgUrl.row2;
+  const row3 = imgUrl.row3;
+
   return (
     <div className="home">
       <div className="home__header">
@@ -57,13 +62,66 @@ function Home() {
           </div>
         </div>
         <div className="home__row">
-          <HomeRow />
+          <HomeRow
+            rowItem={[
+              row1.img1,
+              row1.img2,
+              row1.img3,
+              row1.img4,
+              row1.img5,
+              row1.img6,
+            ]}
+          />
         </div>
         <div className="home__row">
-          <HomeRow />
+          <HomeRow
+            rowItem={[
+              row2.img1,
+              row2.img2,
+              row2.img3,
+              row2.img4,
+              row2.img5,
+              row2.img6,
+              row2.img7,
+              row2.img8,
+              row2.img9,
+              row2.img10,
+              row2.img11,
+              row2.img12,
+              row2.img13,
+              row2.img14,
+              row2.img15,
+              row2.img16,
+              row2.img17,
+              row2.img18,
+              row2.img19,
+              row2.img20,
+            ]}
+          />
         </div>
         <div className="home__row">
-          <HomeRow />
+          <HomeRow
+            rowItem={[
+              row3.img1,
+              row3.img2,
+              row3.img3,
+              row3.img4,
+              row3.img5,
+              row3.img6,
+              row3.img7,
+              row3.img8,
+              row3.img9,
+              row3.img10,
+              row3.img11,
+              row3.img12,
+              row3.img13,
+              row3.img14,
+              row3.img15,
+              row3.img16,
+              row3.img17,
+              row3.img18,
+            ]}
+          />
         </div>
       </div>
     </div>

@@ -33,11 +33,10 @@
   text-overflow: ellipsis;
 }
 
-.homerow__carousel {
+.homerow__view {
   width: 100%;
   margin: 0 0 5px;
   position: relative;
-  overflow: hidden;
 
   margin-bottom: 0 !important;
   box-sizing: border-box;
@@ -46,7 +45,7 @@
   line-height: 19px !important;
 }
 
-.homerow__carouselView {
+.homerow__innerView {
   width: 100%;
   min-height: 220px;
 
@@ -54,9 +53,11 @@
   overflow: hidden;
   position: relative;
   margin: 0;
+
+  scroll-behavior: smooth;
 }
 
-.homerow__carouselList {
+.homerow__list {
   display: inline-block;
   position: relative;
   left: 0;
@@ -66,8 +67,18 @@
   box-sizing: border-box;
   white-space: nowrap;
 }
+.homerow__list {
+  left: 0px;
+  display: inline-block;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0;
+}
+.homerow__list::-webkit-scrollbar {
+  display: none; /* hide scroll bar*/
+}
 
-.homerow__carouselCard {
+.homerow__rowCard {
   display: inline-block;
   list-style: none;
   margin: 0 10px 0 0;
@@ -83,7 +94,7 @@
   position: relative;
 }
 
-.homerow__carouselCard::before {
+.homerow__rowCard::before {
   content: "";
   display: inline-block;
   height: 100%;
@@ -91,22 +102,26 @@
   min-height: inherit;
 }
 
-.homerow__carouselItem {
+.homerow__item {
   text-align: center;
   position: relative;
   display: inline-block;
   min-width: 145px;
   color: #111;
   list-style: none;
+
+  box-sizing: border-box;
 }
 
-.homerow__carouselItem img {
+.homerow__item img {
   width: auto;
   height: auto;
   max-width: 270px;
   max-height: 200px;
   vertical-align: middle;
   border: 0;
+  cursor: pointer;
+  text-align: center;
 
   box-sizing: border-box;
 }
@@ -138,53 +153,7 @@
   font-style: italic;
 }
 
-.carousel-left {
-  display: inline;
-  left: 0;
-  border-radius: 0 3px 3px 0;
-  clip: rect(-10px, 55px, 110px, 0);
-  padding-right: 5px;
-  opacity: 0.5;
-
-  position: absolute;
-  top: 55px;
-  background-color: #fff;
-
-  line-height: 100px;
-
-  text-align: center;
-  box-shadow: 0 1px 3px #888;
-  user-select: none;
-
-  text-decoration: none;
-  color: #0066c0;
-
-  box-sizing: border-box;
-}
-.carousel-left span {
-  background-position: -14px 0;
-
-  display: inline-block;
-  line-height: normal;
-  vertical-align: top;
-  position: relative;
-  top: 50%;
-  height: 22px;
-  width: 13px;
-  margin-top: -11px;
-
-  background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonGatewayAuiAssets-gw_sprite_desktop-25075f3…._V2_.png);
-  background-size: 132px 235px;
-
-  cursor: pointer;
-}
-
-.carousel-right {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  clip: rect(-10px, 45px, 110px, -10px);
-  padding-left: 5px;
-
+.homerow__scrollLeft {
   position: absolute;
   top: 55px;
   background-color: #fff;
@@ -193,23 +162,80 @@
   width: 45px;
   text-align: center;
   box-shadow: 0 1px 3px #888;
-  user-select: none;
 
+  left: 0;
+  border-radius: 0 3px 3px 0;
+  clip: rect(-10px, 55px, 110px, 0);
+  padding-right: 5px;
+  opacity: 0.9;
   cursor: pointer;
+  box-sizing: border-box;
 }
-
-.carousel-right span {
-  display: inline-block;
-  line-height: normal;
+.homerow__scrollLeft img {
   vertical-align: top;
-  position: relative;
+  position: absolute;
   top: 50%;
   height: 22px;
   width: 13px;
   margin-top: -11px;
+  object-fit: contain;
+  cursor: pointer;
+}
 
-  background-position: 0 0;
-  background-image: url(https://m.media-amazon.com/images/G/01/AUIClients/AmazonGatewayAuiAssets-gw_sprite_desktop-25075f3…._V2_.png);
-  background-size: 132px 235px;
+.homerow__scrollRight {
+  position: absolute;
+  top: 55px;
+  background-color: #fff;
+  height: 100px;
+  line-height: 100px;
+  width: 45px;
+  text-align: center;
+  box-shadow: 0 1px 3px #888;
+
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  clip: rect(-10px, 45px, 110px, -10px);
+  padding-left: 5px;
+  opacity: 0.9;
+  cursor: pointer;
   box-sizing: border-box;
+}
+
+.homerow__scrollRight img {
+  vertical-align: top;
+  position: absolute;
+  top: 50%;
+  height: 22px;
+  width: 13px;
+  margin-top: -11px;
+  object-fit: contain;
+  cursor: pointer;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.homerow__scrollbar {
+  display: block;
+  position: absolute;
+  height: 6px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  font-size: 0;
+}
+
+.homerow__scrollbar span {
+  display: block;
+  background-color: #eee;
+  height: 1px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+  top: 2px;
+  margin: 0;
+
+  height: 0;
 }
