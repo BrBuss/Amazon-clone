@@ -27,11 +27,26 @@
   color: #c45500 !important;
 }
 .app__footer {
+  display: block;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  border-radius: 4px;
+  background-color: white;
+}
+
+.app__footerInner {
   display: flex;
-  padding: 6px;
-  margin-top: 10px;
-  align-items: center;
   justify-content: center;
-  position: static;
-  bottom: 0;
+  height: 44px;
+  padding-top: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.14),
+    rgba(0, 0, 0, 0.03) 3px,
+    transparent
+  );
+  z-index: 0;
+  zoom: 1;
 }

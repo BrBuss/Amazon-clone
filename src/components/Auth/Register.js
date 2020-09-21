@@ -107,9 +107,6 @@ function Register() {
               </div>
             </div>
           </div>
-          <div className="login__break">
-            <h5>New to Amazon?</h5>
-          </div>
         </div>
       </div>
     </div>

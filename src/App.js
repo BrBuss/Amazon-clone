@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home/Home";
 import Checkout from "./components/Checkout/Checkout";
-import Login from "./components/Login/Login";
+import Login from "./components/Auth/Login";
 import { useStateValue } from "./components/StateProvider";
 import { auth } from "./services/firebase";
-import Register from "./components/Login/Register";
+import Register from "./components/Auth/Register";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -52,7 +52,7 @@ function App() {
           </Route>
         </Switch>
         <div className="app__footer">
-          <p>Made by Bruno Buss</p>
+          <div className="app__footerInner">Made by Bruno Buss</div>
         </div>
       </div>
     </Router>

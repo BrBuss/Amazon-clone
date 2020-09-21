@@ -1,7 +1,7 @@
 .login {
   background-color: white;
   padding: 20px;
-  height: max-content;
+  height: 100vh;
 }
 
 .login__header {
