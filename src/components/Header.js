@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import MenuIcon from "@material-ui/icons/Menu";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../StateProvider";
 import { auth } from "../services/firebase";
 
 function Header() {

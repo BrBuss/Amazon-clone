@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home/Home";
-import Checkout from "./components/Checkout/Checkout";
-import Login from "./components/Auth/Login";
-import { useStateValue } from "./components/StateProvider";
+import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
+import { useStateValue } from "./StateProvider";
 import { auth } from "./services/firebase";
-import Register from "./components/Auth/Register";
+import Register from "./pages/Register";
+import Shop from "./pages/Shop";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -45,6 +46,10 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/shop">
+            <Header />
+            <Shop />
           </Route>
           <Route path="/">
             <Header />

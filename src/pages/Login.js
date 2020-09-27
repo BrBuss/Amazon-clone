@@ -1,55 +1,62 @@
 import React, { useState } from "react";
+import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
-import "./Register.css";
-import { auth } from "../../services/firebase.js";
+import { auth } from "../services/firebase.js";
 
-function Register() {
+function Login() {
+  // variables
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [reenterPassword, setReenterPassword] = useState("");
+  const [savedEmail, setSavedEmail] = useState(false);
 
-  const register = (event) => {
+  const next = (event) => {
     event.preventDefault();
-    //register logic
-    if (password === reenterPassword) {
-      auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((auth) => {
-          //created user, logged in and redirect to homepage
-          history.push("/");
-        })
-        .catch((e) => alert(e.message));
-    } else {
-      alert("Passwords must be the same ");
-    }
+    setSavedEmail(true);
+    console.log(savedEmail);
+  };
+  const goback = () => {
+    setSavedEmail(false);
+  };
+
+  const login = (event) => {
+    event.preventDefault(); // this stops the refresh
+    //login logic
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        //logged in, redirect to homepage
+        history.push("/");
+      })
+      .catch((e) => alert(e.message));
   };
 
   return (
-    <div className="register">
-      <div className="register__header">
+    <div className="login">
+      <div className="login__header">
         <Link to="/">
           <img
-            className="register__logo"
+            className="login__logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1280px-Amazon_logo.svg.png"
             alt="logo"
           />
         </Link>
       </div>
-      <div className="register__container">
-        <div className="register__column">
+
+      <div className="login__container">
+        <div className="login__column">
           <div className="login__box">
             <div className="box__inner">
               <div className="login__title">
-                <h1>Create account</h1>
+                <h1>Sign-In</h1>
               </div>
               <div className="login__formContainer">
-                <form onSubmit={register}>
+                <form onSubmit={login}>
                   <div className="login__emailContainer">
-                    <label className="login__label" htmlFor="input_box">
+                    <label className="login__label" htmlFor="email_box">
                       Email (phone for mobile accounts)
                     </label>
-                    <div id="input_box">
+                    <div id="email_box">
                       <input
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
@@ -59,26 +66,10 @@ function Register() {
                     </div>
                   </div>
                   <div className="login__passwordContainer">
-                    <label className="login__label" htmlFor="input_box">
+                    <label className="login__label" htmlFor="password_box">
                       Password
                     </label>
-                    <div id="input_box">
-                      <input
-                        placeholder="at least 6 characters"
-                        value={reenterPassword}
-                        onChange={(event) =>
-                          setReenterPassword(event.target.value)
-                        }
-                        className="login__input"
-                        type="password"
-                      />
-                    </div>
-                  </div>
-                  <div className="login__passwordContainer">
-                    <label className="login__label" htmlFor="input_box">
-                      Re-enter password
-                    </label>
-                    <div id="input_box">
+                    <div id="password_box">
                       <input
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
@@ -87,11 +78,12 @@ function Register() {
                       />
                     </div>
                   </div>
-                  <div className="register__boxBottom">
-                    <div className="register__button">
+                  <div className="login__boxBottom">
+                    <div className="login__button">
                       <input
-                        className="register__submit"
-                        value="Create your Amazon account"
+                        className="login__submit"
+                        value="Login"
+                        aria-labelledby="Login"
                         type="submit"
                       />
                     </div>
@@ -102,15 +94,23 @@ function Register() {
                   </div>
                 </form>
                 <div className="login__help">
-                  <a href="#">Need Help?</a>
+                  <a href="javascript:void(0)">Need Help?</a>
                 </div>
               </div>
             </div>
           </div>
+          <div className="login__break">
+            <h5>New to Amazon?</h5>
+          </div>
+          <span className="login__createAccount">
+            <span className="createAccount__button">
+              <Link to="/register">Create your Amazon account</Link>
+            </span>
+          </span>
         </div>
       </div>
     </div>
   );
 }
 
-export default Register;
+export default Login;

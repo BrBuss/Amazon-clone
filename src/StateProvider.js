@@ -1,10 +1,10 @@
 // data layer setup
 import React, { createContext, useContext, useReducer } from "react";
 
-//Data Layer
+// Prepares the DataLayer
 export const StateContext = createContext();
 
-//Provider
+//Provider, wraps the entire app, and provide the datalayer
 export const StateProvider = ({ reducer, initialState, children }) => (
   <StateContext.Provider value={useReducer(reducer, initialState)}>
     {children}

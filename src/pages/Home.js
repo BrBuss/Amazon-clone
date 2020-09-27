@@ -1,10 +1,10 @@
 import React from "react";
 import "./Home.css";
 
-import HomeCard from "./HomeCard";
+import HomeCard from "../components/Home/HomeCard";
 import { Link } from "react-router-dom";
-import HomeRow from "./HomeRow";
-import { imgUrl } from "./imgUrls";
+import HomeRow from "../components/Home/HomeRow";
+import { imgUrl } from "../components/Home/imgUrls";
 
 function Home() {
   const row1 = imgUrl.row1;

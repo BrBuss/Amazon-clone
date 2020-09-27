@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeCard.css";
-import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 function HomeCard(props) {
   return (
@@ -50,7 +50,7 @@ function HomeCard(props) {
               </div>
             </div>
             <div className="card__footer">
-              <Link to="/">
+              <Link to="/shop">
                 <p>Shop now</p>
               </Link>
             </div>
@@ -68,7 +68,7 @@ function HomeCard(props) {
               </div>
             </div>
             <div className="card__footer">
-              <Link to="/">
+              <Link to="/shop">
                 <p>Shop now</p>
               </Link>
             </div>

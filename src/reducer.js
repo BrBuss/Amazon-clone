@@ -1,6 +1,7 @@
 export const getCartTotal = (cart) =>
+  //ES6 function
   cart?.reduce((amount, item) => item.price + amount, 0);
-
+//setting initial state of datalayer
 export const initialState = {
   cart: [],
   user: null,
