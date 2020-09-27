@@ -1,8 +1,9 @@
 import React from "react";
 import "./HomeCard.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function HomeCard(props) {
+  const history = useHistory();
   return (
     <div className="card">
       {props.img?.length === 4 ? (
@@ -11,7 +12,10 @@ function HomeCard(props) {
             <div className="card__title">
               <h2>{props.title}</h2>
             </div>
-            <div className="card__center">
+            <div
+              onClick={(e) => history.push("/shop")}
+              className="card__center"
+            >
               <div className="card__row">
                 <div className="card__item left">
                   <div className="card__img">

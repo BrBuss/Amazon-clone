@@ -9,6 +9,8 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./services/firebase";
 import Register from "./pages/Register";
 import Shop from "./pages/Shop";
+import Payment from "./pages/Payment";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -35,31 +37,37 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-        <Switch>
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/shop">
-            <Header />
-            <Shop />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-        </Switch>
-        <div className="app__footer">
-          <div className="app__footerInner">Made by Bruno Buss</div>
+      <ScrollToTop>
+        <div className="app">
+          <Switch>
+            <Route path="/checkout">
+              <Header />
+              <Checkout />
+            </Route>
+            <Route path="/payment">
+              <Header />
+              <Payment />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/shop">
+              <Header />
+              <Shop />
+            </Route>
+            <Route path="/">
+              <Header />
+              <Home />
+            </Route>
+          </Switch>
+          <div className="app__footer">
+            <div className="app__footerInner">Made by Bruno Buss</div>
+          </div>
         </div>
-      </div>
+      </ScrollToTop>
     </Router>
   );
 }

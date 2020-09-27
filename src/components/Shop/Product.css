@@ -1,0 +1,124 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px;
+
+  background-color: white;
+  box-sizing: border-box;
+}
+.product__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 210px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+}
+.product__info {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 15px;
+
+  font-size: 13px;
+  line-height: 19px;
+  color: #111;
+  box-sizing: border-box;
+}
+
+.product__infoRow {
+  margin-bottom: 6px !important;
+  width: 100%;
+}
+
+.product__price {
+  width: 100%;
+  line-height: 1 !important;
+}
+.product__price span {
+  color: #cc1c39 !important;
+  line-height: 1 !important;
+  display: inline-block;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+.product__title {
+  width: 210px;
+  text-decoration: none;
+  color: #0066c0;
+  height: auto !important;
+
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.product__title span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #c45500;
+}
+
+.product__description span {
+  width: 210px;
+  line-height: 1 !important;
+  font-size: 11px;
+  color: #111 !important;
+}
+
+.product__img {
+  margin-top: 14px !important;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+.product__buttonContainer {
+  width: 100%;
+  max-width: 210px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.product__button {
+  background: #ffd814;
+  border-color: #fcd200;
+  width: 100%;
+  height: 29px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  border-radius: 2px;
+  padding: 0 10px 0 11px;
+
+  border-radius: 20px;
+
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-align: center;
+
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.product__button:hover {
+  background: #f7ca00;
+  border-color: #f2c200;
+  box-shadow: 0 2px 5px 0 rgba(213, 217, 217, 0.5);
+}
+
+.emptyrow {
+  margin-top: 6px !important;
+}

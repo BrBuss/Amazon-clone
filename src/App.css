@@ -50,3 +50,9 @@
   z-index: 0;
   zoom: 1;
 }
+
+.app {
+  justify-content: center;
+  align-items: center;
+  min-width: 1000px;
+}

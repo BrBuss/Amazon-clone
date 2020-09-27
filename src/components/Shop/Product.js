@@ -1,10 +1,10 @@
 import React from "react";
 import "./Product.css";
 import StarRateIcon from "@material-ui/icons/StarRate";
-import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider";
 
 function Product({ id, title, img, price, rating, description }) {
-  const [dispatch] = useStateValue();
+  const [{ cart }, dispatch] = useStateValue();
   const addToCart = () => {
     //add item to cart
     dispatch({
@@ -23,13 +23,27 @@ function Product({ id, title, img, price, rating, description }) {
   return (
     <div key={id} className="product">
       <div className="product__container">
+        <div className="product__imgContainer">
+          <img src={img} alt="" className="product__img" />
+        </div>
         <div className="product__info">
-          <p className="product__title">{title}</p>
-          <p className="product__descrition">{description}</p>
-          <p className="product__price">
-            <small>€</small>
-            <strong>{price}</strong>
-          </p>
+          <div className="product__infoRow">
+            <div className="product__price">
+              <span>€{price}</span>
+            </div>
+            <div className="emptyrow"></div>
+          </div>
+          <div className="product__infoRow">
+            <div className="product__title">
+              <span>{title}</span>
+            </div>
+          </div>
+          <div className="product__infoRow">
+            <div className="product__description">
+              <span>{description}</span>
+            </div>
+          </div>
+
           <div className="product__rating">
             {Array(rating)
               .fill()
@@ -37,9 +51,6 @@ function Product({ id, title, img, price, rating, description }) {
                 <StarRateIcon />
               ))}
           </div>
-        </div>
-        <div className="product__imgContainer">
-          <img src={img} alt="" className="product__img" />
         </div>
         <div className="product__buttonContainer">
           <button onClick={addToCart} className="product__button">

@@ -10,12 +10,12 @@
 
         <div className="home__productRow">
           <Product
-            id="123456"
-            title="some title"
-            description="just a random description for test proposes"
-            price={11.5}
-            rating={5}
-            img="https://images-na.ssl-images-amazon.com/images/I/511TKNyCY8L._AC_SL1000_.jpg"
+              id="123456"
+              title="some title"
+              description="just a random description for test proposes"
+              price={11.5}
+              rating={5}
+              img="https://images-na.ssl-images-amazon.com/images/I/511TKNyCY8L._AC_SL1000_.jpg"
           />
           <Product
             id="12"

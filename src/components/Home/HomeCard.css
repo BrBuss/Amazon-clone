@@ -50,6 +50,7 @@
 
   font-size: 13px !important;
   line-height: 19px !important;
+  cursor: pointer;
 }
 
 .card__row {
