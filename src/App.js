@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import "./App.css";
+//React Router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+//pages & components
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
@@ -11,6 +15,11 @@ import Register from "./pages/Register";
 import Shop from "./pages/Shop";
 import Payment from "./pages/Payment";
 import ScrollToTop from "./components/ScrollToTop";
+
+//stripe api key
+const promise = loadStripe(
+  "pk_test_51HXOmuKZlUwyjOEkVF0ZxnbSiF4iJ4qaNGv34hYkU58AWyYQqlWU7bWJa3ZmgKBwuEXJ7OIud7GQZOwqHITBd6Gf00e0aI9gda"
+);
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -45,8 +54,9 @@ function App() {
               <Checkout />
             </Route>
             <Route path="/payment">
-              <Header />
-              <Payment />
+              <Elements stripe={promise}>
+                <Payment />
+              </Elements>
             </Route>
             <Route path="/login">
               <Login />

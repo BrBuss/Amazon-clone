@@ -18,17 +18,15 @@
 
 .checkoutProduct__left {
   display: flex;
-  flex: 1;
 }
 
 .checkoutProduct__imgContainer {
-  width: 180px;
-  height: 180px;
+  width: 190px;
+  height: 190px;
 }
 
 .checkoutProduct__img {
-  width: 100%;
-  max-width: 180px;
+  width: 180px;
   height: 180px;
   object-fit: contain;
 }
@@ -38,6 +36,11 @@
   font-weight: 800 !important;
   font-size: 17px !important;
   cursor: pointer;
+}
+
+.checkoutProduct__title:hover {
+  color: #e47911;
+  text-decoration: underline;
 }
 
 .__inStock {
@@ -72,6 +75,10 @@
   text-decoration: underline;
 }
 
+.checkoutProduct__save input:hover {
+  color: #e47911;
+  text-decoration: underline;
+}
 .checkoutProduct__right {
   display: flex;
   width: 100%;

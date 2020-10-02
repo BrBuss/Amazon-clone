@@ -56,3 +56,145 @@
   align-items: center;
   min-width: 1000px;
 }
+
+.row {
+  width: 100%;
+  box-sizing: border-box;
+}
+.space_bottom {
+  margin-bottom: 14px;
+}
+.box {
+  box-sizing: border-box;
+  display: block;
+  text-align: left;
+}
+
+.box_flex {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.radio_option {
+  position: relative;
+  font-weight: 400;
+  color: #333;
+  padding-left: 19px !important;
+  text-indent: -18px;
+  margin-left: 3px;
+  top: -2px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.span_green {
+  color: #090;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin: 0;
+  padding: 0;
+  height: 14px;
+  width: 14px;
+  vertical-align: middle;
+  position: relative;
+  bottom: -1px;
+  overflow: hidden;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio_label {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  align-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio_label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio_label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.radio_label input:checked ~ .checkmark {
+  background: white;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio_label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio_label .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  background-color: #2196f3;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+}
+
+.space_between {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box_inner {
+  position: relative;
+  padding: 14px 18px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}

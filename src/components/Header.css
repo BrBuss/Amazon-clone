@@ -129,6 +129,8 @@
 
 .header__basketCount {
   margin: 0 10px 0 10px;
+  color: #f08804;
+  top: 7px;
 }
 
 .header__navBottom {

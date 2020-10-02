@@ -1,0 +1,24 @@
+.paymentProduct {
+  display: block;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.paymentProduct__imgContainer {
+  max-width: 100px;
+  margin-right: 20px;
+  min-height: 1px;
+  box-sizing: border-box;
+}
+
+.paymentProduct__imgContainer img {
+  object-fit: contain;
+  width: 50px;
+}
+
+.paymentProduct__price {
+  font-weight: 700;
+  margin-bottom: 4px !important;
+  color: #b12704;
+  box-sizing: border-box;
+}
