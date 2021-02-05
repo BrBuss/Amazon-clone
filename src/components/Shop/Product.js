@@ -4,7 +4,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 import { useStateValue } from "../../StateProvider";
 
 function Product({ id, title, img, price, rating, description }) {
-  const [{ cart }, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
   const addToCart = () => {
     //add item to cart
     dispatch({

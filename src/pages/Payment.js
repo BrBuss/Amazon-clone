@@ -63,12 +63,15 @@ function Payment() {
       const response = await axios({
         method: "post",
         //stipe expects the total in a currencie subunits ex:(1 dolar = 100 cent)
-        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`, //backend url
       });
       setClientSecret(response.data.clientSecret);
     };
+
     getClientSecret(); //call inside useEffect
-  }, [cart]); // when ever cart changes make a generate a new special stripe
+  }, [cart]); // when ever cart changes, generates a new client secret
+
+  console.log("client secret>>>>>>", clientSecret);
 
   return (
     <div className="payment">
